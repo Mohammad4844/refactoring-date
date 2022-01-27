@@ -88,7 +88,6 @@ public class Date {
   }
 
   public int getMonth() {
-
     return switch (month) {
       case "January" -> 1;
       case "February" -> 2;
@@ -108,8 +107,6 @@ public class Date {
         yield 0;
       }
     };
-
-
   }
 
   public int getDay() {
@@ -161,7 +158,6 @@ public class Date {
   }
 
   protected boolean checkMonthValidity(String month) {
-
     return switch (month) {
       case "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" -> true;
       default -> false;
@@ -169,7 +165,6 @@ public class Date {
   }
 
   protected String monthString(int monthInt) {
-
     return switch (monthInt) {
       case 1 -> "January";
       case 2 -> "February";
