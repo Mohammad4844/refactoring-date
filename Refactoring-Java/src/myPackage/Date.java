@@ -118,6 +118,7 @@ public class Date {
         && (yearInt <= 9999));
   }
   
+  
   /*
    * All methods below this are altered ones
    * readInput() had data types replaced with var
