@@ -23,5 +23,6 @@ Method and variable names changed:
 I didn't change anything else because the program is already in its simplest, most clear form. There is no variable used once, so no need for inline. The methods are in their simplest possible form and are directly related to THIS class (extracting them would be of no good). There was also no need to extract any local variable.
 <br>
 <br>
-* Note: the 4 main methods that were asked to be edited are towards the end of the document, right below a comment with a few details. To get to there quickly, 
+* Note: the 4 main methods that were asked to be edited are towards the end of the document, right below a comment with a few details. 
+To get to there quickly,
 [Click here](Refactoring-Java/src/myPackage/Date.java) 
