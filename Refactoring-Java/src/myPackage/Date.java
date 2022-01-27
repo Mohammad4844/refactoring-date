@@ -87,28 +87,6 @@ public class Date {
       this.day = day;
   }
 
-  public int getMonth() {
-    return switch (month) {
-      case "January" -> 1;
-      case "February" -> 2;
-      case "March" -> 3;
-      case "April" -> 4;
-      case "May" -> 5;
-      case "June" -> 6;
-      case "July" -> 7;
-      case "August" -> 8;
-      case "September" -> 9;
-      case "October" -> 10;
-      case "November" -> 11;
-      case "December" -> 12;
-      default -> {
-        System.out.println("Fatal Error");
-        System.exit(0);
-        yield 0;
-      }
-    };
-  }
-
   public int getDay() {
     return day;
   }
@@ -130,6 +108,24 @@ public class Date {
         || (year == otherDate.year && month.equals(otherDate.month) && day < otherDate.day));
   }
 
+  private boolean checkDateValidity(int monthInt, int dayInt, int yearInt) {
+    return ((monthInt >= 1) && (monthInt <= 12) && (dayInt >= 1) && (dayInt <= 31)
+        && (yearInt >= 1000) && (yearInt <= 9999));
+  }
+
+  private boolean checkDateValidity(String monthString, int dayInt, int yearInt) {
+    return (checkMonthValidity(monthString) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000)
+        && (yearInt <= 9999));
+  }
+  
+  /*
+   * All methods below this are altered ones
+   * readInput() had data types replaced with var
+   * Rest of the 3 methods had the new switch statement integrated into them
+   * 
+   * Note that one of these methods (monthOk) has its name changed (checkMonthValidity)
+   */
+  
   public void readInput() {
     var tryAgain = true;
     var keyboard = new Scanner(System.in);
@@ -146,21 +142,26 @@ public class Date {
         System.out.println("Illegal date. Reenter input.");
     }
   }
-
-  private boolean checkDateValidity(int monthInt, int dayInt, int yearInt) {
-    return ((monthInt >= 1) && (monthInt <= 12) && (dayInt >= 1) && (dayInt <= 31)
-        && (yearInt >= 1000) && (yearInt <= 9999));
-  }
-
-  private boolean checkDateValidity(String monthString, int dayInt, int yearInt) {
-    return (checkMonthValidity(monthString) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000)
-        && (yearInt <= 9999));
-  }
-
-  protected boolean checkMonthValidity(String month) {
+  
+  public int getMonth() {
     return switch (month) {
-      case "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" -> true;
-      default -> false;
+      case "January" -> 1;
+      case "February" -> 2;
+      case "March" -> 3;
+      case "April" -> 4;
+      case "May" -> 5;
+      case "June" -> 6;
+      case "July" -> 7;
+      case "August" -> 8;
+      case "September" -> 9;
+      case "October" -> 10;
+      case "November" -> 11;
+      case "December" -> 12;
+      default -> {
+        System.out.println("Fatal Error");
+        System.exit(0);
+        yield 0;
+      }
     };
   }
 
@@ -184,8 +185,13 @@ public class Date {
         yield "";
       }
     };
-
-
+  }
+  
+  protected boolean checkMonthValidity(String month) {
+    return switch (month) {
+      case "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" -> true;
+      default -> false;
+    };
   }
 }
 
