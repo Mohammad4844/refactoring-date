@@ -21,4 +21,6 @@ Method and variable names changed:
 - monthOk() -> checkMonthValidity()
 - monthNumber variables in monthString() and setMonth() (so there is consistency across the program)
 I didn't change anything else because the program is already in its simplest, most clear form. There is no variable used once, so no need for inline. The methods are in their simplest possible form and are directly related to THIS class (extracting them would be of no good). There was also no need to extract any local variable.
-
+<br>
+<br>
+* Note: the 4 main methods that were asked to be edited are towards the end of the document, right below a comment with a few details 
