@@ -15,6 +15,10 @@ Click to access files quickly:
 - using a loop, tested to see if method correctly checks months (also used an invalid to check if it correctly identifies it)
 4) The first 2 tests basically cover alost all methods. As they utilize them mainly, them working is proof enough that the others also work. I made the last 3 just as extra tests.
 5)   Testing for values was done mostly with Valid values (values which should work properly). I could'nt test with Invalid values as the appropriate response in the program is system.exit(0), and there isn't a nice way to check for it (assert for it).
-<br>
+## Notes on Refactoring
+Method and variable names changed:
+- dateOK() -> checkDateValidity()  (there are 2 occurunces of this method)
+- monthOk() -> checkMonthValidity()
+- monthNumber variables in monthString() and setMonth() (so there is consistency across the program)
 
 
