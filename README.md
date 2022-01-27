@@ -1,9 +1,9 @@
 # Refactoring Date Assignment
 Click to access files quickly:
 <br>
-[Date.java](refactoring-date/Refactoring-Java/src/myPackage/Date.java/)
+[Date.java](Refactoring-Java/src/myPackage/Date.java)
 <br>
-[Test File](refactoring-date/Refactoring-Java/test/myPackage/DateTest.java) 
+[Test File](Refactoring-Java/test/myPackage/DateTest.java) 
 ## Notes on Testing
 1) Private methods were made Protected so they could be accessed by the Test File
 2) Tests were made for major methods, and even for methods we had to alter
