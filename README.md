@@ -24,4 +24,4 @@ I didn't change anything else because the program is already in its simplest, mo
 <br>
 <br>
 * Note: the 4 main methods that were asked to be edited are towards the end of the document, right below a comment with a few details. To get to there quickly, 
-[Click here](Refactoring-Java/src/myPackage/Date.java)
+[Click here](Refactoring-Java/src/myPackage/Date.java) 
