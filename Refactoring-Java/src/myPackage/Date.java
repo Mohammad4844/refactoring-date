@@ -38,7 +38,7 @@ public class Date {
   }
 
   public void setDate(int monthInt, int day, int year) {
-    if (dateOK(monthInt, day, year)) {
+    if (checkDateValidity(monthInt, day, year)) {
       this.month = monthString(monthInt);
       this.day = day;
       this.year = year;
@@ -49,7 +49,7 @@ public class Date {
   }
 
   public void setDate(String monthString, int day, int year) {
-    if (dateOK(monthString, day, year)) {
+    if (checkDateValidity(monthString, day, year)) {
       this.month = monthString;
       this.day = day;
       this.year = year;
@@ -71,12 +71,12 @@ public class Date {
       this.year = year;
   }
 
-  public void setMonth(int monthNumber) {
-    if ((monthNumber <= 0) || (monthNumber > 12)) {
+  public void setMonth(int monthInt) {
+    if ((monthInt <= 0) || (monthInt > 12)) {
       System.out.println("Fatal Error");
       System.exit(0);
     } else
-      month = monthString(monthNumber);
+      month = monthString(monthInt);
   }
 
   public void setDay(int day) {
@@ -142,7 +142,7 @@ public class Date {
       String monthInput = keyboard.next();
       var dayInput = keyboard.nextInt();
       var yearInput = keyboard.nextInt();
-      if (dateOK(monthInput, dayInput, yearInput)) {
+      if (checkDateValidity(monthInput, dayInput, yearInput)) {
         setDate(monthInput, dayInput, yearInput);
         tryAgain = false;
       } else
@@ -150,17 +150,17 @@ public class Date {
     }
   }
 
-  private boolean dateOK(int monthInt, int dayInt, int yearInt) {
+  private boolean checkDateValidity(int monthInt, int dayInt, int yearInt) {
     return ((monthInt >= 1) && (monthInt <= 12) && (dayInt >= 1) && (dayInt <= 31)
         && (yearInt >= 1000) && (yearInt <= 9999));
   }
 
-  private boolean dateOK(String monthString, int dayInt, int yearInt) {
-    return (monthOK(monthString) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000)
+  private boolean checkDateValidity(String monthString, int dayInt, int yearInt) {
+    return (checkMonthValidity(monthString) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000)
         && (yearInt <= 9999));
   }
 
-  protected boolean monthOK(String month) {
+  protected boolean checkMonthValidity(String month) {
 
     return switch (month) {
       case "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" -> true;
@@ -168,9 +168,9 @@ public class Date {
     };
   }
 
-  protected String monthString(int monthNumber) {
+  protected String monthString(int monthInt) {
 
-    return switch (monthNumber) {
+    return switch (monthInt) {
       case 1 -> "January";
       case 2 -> "February";
       case 3 -> "March";

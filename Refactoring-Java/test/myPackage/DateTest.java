@@ -66,8 +66,8 @@ public class DateTest {
   @Test
   public void testMonthOK() {
     for (int i = 1; i <= 12; i++) {
-      assertTrue(date.monthOK(testingContainerOfMonths[i - 1]));
+      assertTrue(date.checkMonthValidity(testingContainerOfMonths[i - 1]));
     }
-    assertFalse(date.monthOK("abcd"));
+    assertFalse(date.checkMonthValidity("abcd"));
   }
 }
