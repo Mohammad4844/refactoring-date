@@ -33,7 +33,7 @@ public class DateTest {
 
   /*
    * The tests below are tests for major methods that either 1) check most of the program to see if
-   * stuff works or 2) check individual methods that were altered
+   * stuff works or 2) check individual methods that were altered.
    */
 
   @Test
