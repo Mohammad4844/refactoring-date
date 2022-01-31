@@ -78,7 +78,7 @@ public class DateTest {
 
   /*
    * The tests below are extra for other methods in the Date.java class. There was nothing specified
-   * on what methods to test, so I made tests for these too just in case
+   * on what methods to test, so I made tests for these too just in case.
    */
 
   @Test
