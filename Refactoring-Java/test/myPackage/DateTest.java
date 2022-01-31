@@ -31,6 +31,11 @@ public class DateTest {
       "July", "August", "September", "October", "November", "December"};
 
 
+  /*
+   * The tests below are tests for major methods that either 1) check most of the program to see if
+   * stuff works or 2) check individual methods that were altered
+   */
+
   @Test
   public void testForNormalValuesWithMonthAsInt() {
     date.setDate(testMonth1, testDay1, testYear1);
@@ -70,4 +75,43 @@ public class DateTest {
     }
     assertFalse(date.checkMonthValidity("abcd"));
   }
+
+  /*
+   * The tests below are extra for other methods in the Date.java class. There was nothing specified
+   * on what methods to test, so I made tests for these too just in case
+   */
+
+  @Test
+  public void testEquals() {
+    Date dateSame1 = new Date(5, 5, 2005);
+    Date dateSame2 = new Date("May", 5, 2005);
+    Date dateDifferent = new Date(1, 1, 2000);
+    assertTrue(dateSame1.equals(dateSame2));
+    assertFalse(dateSame1.equals(dateDifferent));
+  }
+
+  @Test
+  public void testPrecedes() {
+    Date laterDate = new Date(testMonth1, testDay1, testYear1);
+    Date earlierDate = new Date(testMonth2, testDay2, testYear2);
+    assertTrue(earlierDate.precedes(laterDate));
+    assertFalse(laterDate.precedes(earlierDate));
+  }
+
+  @Test
+  public void testCheckDateValidityIntVersion() {
+    assertTrue(date.checkDateValidity(1, 1, 2000));
+    assertFalse(date.checkDateValidity(99, 1, 2000));
+    assertFalse(date.checkDateValidity(1, 99, 2000));
+    assertFalse(date.checkDateValidity(1, 1, -100));
+  }
+
+  @Test
+  public void testCheckDateValidityStringVersion() {
+    assertTrue(date.checkDateValidity("January", 1, 2000));
+    assertFalse(date.checkDateValidity("abcd", 1, 2000));
+    assertFalse(date.checkDateValidity("January", 99, 2000));
+    assertFalse(date.checkDateValidity("January", 1, -100));
+  }
+
 }

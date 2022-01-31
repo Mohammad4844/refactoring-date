@@ -108,25 +108,24 @@ public class Date {
         || (year == otherDate.year && month.equals(otherDate.month) && day < otherDate.day));
   }
 
-  private boolean checkDateValidity(int monthInt, int dayInt, int yearInt) {
+  protected boolean checkDateValidity(int monthInt, int dayInt, int yearInt) {
     return ((monthInt >= 1) && (monthInt <= 12) && (dayInt >= 1) && (dayInt <= 31)
         && (yearInt >= 1000) && (yearInt <= 9999));
   }
 
-  private boolean checkDateValidity(String monthString, int dayInt, int yearInt) {
+  protected boolean checkDateValidity(String monthString, int dayInt, int yearInt) {
     return (checkMonthValidity(monthString) && (dayInt >= 1) && (dayInt <= 31) && (yearInt >= 1000)
         && (yearInt <= 9999));
   }
-  
-  
+
+
   /*
-   * All methods below this are altered ones
-   * readInput() had data types replaced with var
-   * Rest of the 3 methods had the new switch statement integrated into them
+   * All methods below this are altered ones readInput() had data types replaced with var .Rest of
+   * the 3 methods had the new switch statement integrated into them
    * 
    * Note that one of these methods (monthOk) has its name changed (checkMonthValidity)
    */
-  
+
   public void readInput() {
     var tryAgain = true;
     var keyboard = new Scanner(System.in);
@@ -143,7 +142,7 @@ public class Date {
         System.out.println("Illegal date. Reenter input.");
     }
   }
-  
+
   public int getMonth() {
     return switch (month) {
       case "January" -> 1;
@@ -187,7 +186,7 @@ public class Date {
       }
     };
   }
-  
+
   protected boolean checkMonthValidity(String month) {
     return switch (month) {
       case "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" -> true;
